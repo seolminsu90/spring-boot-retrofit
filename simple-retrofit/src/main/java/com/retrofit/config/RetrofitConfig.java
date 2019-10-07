@@ -18,12 +18,14 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 @Configuration
 public class RetrofitConfig {
 
-    @Autowired
-    private Interceptor commonInterceptor;
+    //Interceptor 적용 시
+    //@Autowired
+    //private Interceptor commonInterceptor;
 
     @Bean
     public OkHttpClient okHttpClient() {
-        return new OkHttpClient.Builder().addInterceptor(commonInterceptor).build();
+        return new OkHttpClient.Builder()//.addInterceptor(commonInterceptor)
+                                .build();
     }
 
     @Bean
