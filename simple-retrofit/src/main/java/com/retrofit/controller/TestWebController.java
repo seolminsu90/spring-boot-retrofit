@@ -33,4 +33,10 @@ public class TestWebController {
             e.printStackTrace();
         }
     }
+    
+    // @Query String queryStringValue
+    // @Query Map<String, String> queryStringMapValue
+    // @Path String pathVariable
+    // @Part("description") RequestBody description,
+    // @Part MultipartBody.Part file
 }
