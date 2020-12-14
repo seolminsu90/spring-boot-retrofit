@@ -32,14 +32,16 @@ public class RetrofitConfig {
                 .modules(new JavaTimeModule()).build();
     }
 
+    // 메인 
     @Bean
     public Retrofit retrofit(ObjectMapper objectMapper, OkHttpClient okHttpClient) {
         return new Retrofit.Builder().baseUrl("http://localhost:8080/")
                 .addConverterFactory(JacksonConverterFactory.create(objectMapper)).client(okHttpClient).build();
     }
 
+    // 하위 API Interface
     @Bean
-    public RetrofitInterface jsonPlaceholderService(Retrofit retrofit) {
+    public RetrofitInterface customApiInterface(Retrofit retrofit) {
         return retrofit.create(RetrofitInterface.class);
     }
 }
